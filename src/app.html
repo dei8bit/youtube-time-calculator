@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	%sveltekit.head%
+</head>
+
+<body class="initialAnimation" data-sveltekit-preload-data="hover">
+	<div style="display: contents">%sveltekit.body%</div>
+</body>
+
+</html>
+
+<style>
+	body {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.initialAnimation {
+		animation: initialAnimation 1.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+	}
+
+	@keyframes initialAnimation {
+		0% {
+			transform: scale(.1);
+			filter: blur(10px);
+			opacity: 0;
+		}
+
+		100% {
+			transform: scale(1);
+			filter: blur(0px);
+			opacity: 1;
+		}
+	}
+</style>
